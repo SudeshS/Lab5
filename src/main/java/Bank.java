@@ -9,10 +9,34 @@
  */
 public class Bank {
 
-    public String bankName;
 
+    /**
+     * String for bank name.
+     */
+    private String bankName;
+
+
+    /**
+     * default bank constructor
+     */
     public Bank() {
         bankName = "Illini Bank";
+    }
+
+    /**
+     * Getter to get bank name.
+     * @return String bankName
+     */
+    public String getBankName() {
+        return bankName;
+    }
+
+    /**
+     * setter method to set bank name.
+     * @param setBankName String for bankName
+     */
+    public void setBankName(final String setBankName) {
+        bankName = setBankName;
     }
 
     /**
@@ -29,6 +53,12 @@ public class Bank {
         /*
          * Implement this function
          */
+        if (bankAccount.getAccountBalance() - amount >= 0) {
+            bankAccount.setAccountBalance(bankAccount.getAccountBalance() - amount);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -45,6 +75,8 @@ public class Bank {
         /*
          * Implement this function
          */
+        bankAccount.setAccountBalance(bankAccount.getAccountBalance() + amount);
+        return true;
     }
 
     /**
@@ -64,6 +96,13 @@ public class Bank {
         /*
          * Implement this function
          */
+        if (source.getAccountBalance() - amount >= 0) {
+            source.setAccountBalance(source.getAccountBalance() - amount);
+            destination.setAccountBalance(destination.getAccountBalance() + amount);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**

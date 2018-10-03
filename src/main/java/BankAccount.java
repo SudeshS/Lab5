@@ -19,8 +19,11 @@ public class BankAccount {
         WORKPLACE
     }
 
-    private int accountNumber;
+    public static int accountNumber;
     public BankAccountType accountType;
+
+
+    private int bankAccountCounter = 0;
     private double accountBalance;
     private String ownerName;
     public double interestRate;
@@ -30,8 +33,16 @@ public class BankAccount {
         /*
          * Implement this function
          */
+        bankAccountCounter++;
     }
 
+    public double getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void setAccountBalance(double accountBalance) {
+        this.accountBalance = accountBalance;
+    }
     /*
      * Implement getters and setters as appropriate for private variables.
      */
